@@ -1,0 +1,20 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": "/home/adonis/Programacion/Proyectos/tec-filtrante",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@/icons": [
+        "src/icons/*"
+      ],
+      "@/components": [
+        "src/components/*"
+      ],
+      "@/lib": [
+        "src/lib/*"
+      ]
+    },
+  }
+}

@@ -1,0 +1,127 @@
+---
+import NavBar from '@/components/NavBar.astro';
+interface Props {
+	title: string;
+	image: string;
+}
+
+const { title, image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo-icon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<header>
+		<NavBar />
+	</header>
+
+	<body>
+		<img src=`./images/${image}` />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 0, 69, 172;
+		--accent-light: 218, 240, 248;
+	}
+	html {
+		background: white;
+		color: black;
+		font-family: 'Khula', 'sans-serif'
+	}
+
+	@font-face {
+		font-family: 'Khula';
+		src: url('/fonts/Khula-Regular.ttf') format('truetype');
+		font-weigth: normal; 
+	}
+
+	@font-face {
+    font-family: 'Khula';
+    src: url('/fonts/Khula-Bold.ttf') format('truetype');
+    font-weight: bold;
+	}
+
+	NavBar {
+		z-index: 10;
+		position: absolute;
+		transform: transtaleY(10px);
+	}
+
+	
+
+
+
+
+/* ********* CSS RESET ******* */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin:0;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+</style>
