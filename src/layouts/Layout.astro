@@ -2,10 +2,9 @@
 import NavBar from '@/components/NavBar.astro';
 interface Props {
 	title: string;
-	image: string;
 }
 
-const { title, image } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +23,7 @@ const { title, image } = Astro.props;
 	</header>
 
 	<body>
-		<img src=`./images/${image}` />
+		<slot name="imagen" />
 	</body>
 </html>
 <style is:global>
@@ -50,11 +49,9 @@ const { title, image } = Astro.props;
     font-weight: bold;
 	}
 
-	NavBar {
-		z-index: 10;
-		position: absolute;
-		transform: transtaleY(10px);
-	}
+
+
+
 
 	
 
