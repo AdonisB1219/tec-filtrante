@@ -1,3 +1,7 @@
+---
+import AnimatedButton from "./AnimatedButton.astro"
+---
+
 <nav>
     <ul>
         <li>
@@ -16,9 +20,7 @@
             <a href="/contacto">CONTACTO</a>
         </li>
         <li>
-            <a 
-                class="animated-button"
-                href="/contacto">Cotiza sin costo</a>
+            <AnimatedButton text="Cotiza sin costo" goesTo="/contacto"/>
         </li>
     </ul>
 </nav>
@@ -37,7 +39,9 @@
         max-height: 50px;
     }
     nav{
-        background-color: rgba(255, 255, 255, 0.507);
-
+        background-color: rgba(255, 255, 255, 0.753);
+    }
+    a {
+        text-decoration: none;
     }
 </style>
