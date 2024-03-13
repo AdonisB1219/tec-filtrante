@@ -26,18 +26,23 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 		background-color: white;
 	}
 	img {
-		filter:opacity(40%);
+		filter:opacity(30%);
 		height: 100vh;
 		width: 100%;
 		object-fit: cover;
 		position: absolute;
 		top: 0px;
 		z-index: -10;
+	}
 
+	h1{
+		font-weight: 500;
+		margin-top: 100px;
 	}
 
 	h3{
 		text-align: center;
+		margin-bottom: 100px;
 	}
 	.landing {
 		scroll-snap-type: y mandatory;
@@ -48,6 +53,8 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 		flex-direction: column;
 		justify-items: center;
 		align-items: center;
-		gap: 40px
+		gap: 50px
 	}
+
+
 </style>
