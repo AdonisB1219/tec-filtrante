@@ -2,21 +2,22 @@
 interface Props {
 	text: string;
     goesTo: string;
-    size: string;
-    bgColor: string;
-    borderColor: string;
+    size?: string;
+    borderColor?: string;
+    theme: string
 }
 
-const { text, goesTo, size, bgColor, borderColor } = Astro.props;
+
+
+const { text, goesTo, size, borderColor, theme = "light" } = Astro.props;
+
+const arrowColor = theme == "light" ? "#fff": "#0045AC";
 ---
 <div class="contenedor">
-<div class=`${size} btn ${bgColor} ${borderColor}`>
+<div class=`${size} btn ${borderColor} ${theme}`>
     <div class="slide-effect">          
     </div>
-    <svg class="arrow" width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16.5449 5.12634C16.7786 4.89264 16.7786 4.51374 16.5449 4.28004L12.7366 0.471681C12.5029 0.237981 12.124 0.237981 11.8903 0.471681C11.6566 0.70538 11.6566 1.08428 11.8903 1.31798L15.2755 4.70319L11.8903 8.08839C11.6566 8.32209 11.6566 8.70099 11.8903 8.93469C12.124 9.16839 12.5029 9.16839 12.7366 8.93469L16.5449 5.12634ZM0.941528 5.30161L16.1218 5.30161L16.1218 4.10476L0.941528 4.10476L0.941528 5.30161Z" fill="#0045AC"/>
-        </svg>
-    <a href={goesTo}>
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill=`${arrowColor}` d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>    <a href={goesTo}>
         {text}
     </a>
 </div>
@@ -24,66 +25,99 @@ const { text, goesTo, size, bgColor, borderColor } = Astro.props;
 
 
 <style>
+    .contenedor {
+        width: fit-content;
+    }
+
     .btn{
         border: 1px solid var(--accent);
-        background-color: var(--accent);
+        background-color: none;
         display: flex;
-        width: 210px;
+        width: 300px;
         align-items: center;
         justify-content: center;
         position: relative;
         overflow: hidden;
         cursor: pointer;
         transition: 800ms;
-        padding: 6px 0px;
-        color:white;
-        transition: 800ms;
+        padding: 15px 0px;
+        color:black;
+        font-size: 20px;
+        transition: 700ms;
     }
 
     a {
-        margin-right: 40px;
+        margin-right: 50px;
         z-index: 10;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .slide-effect {
+        top: 0;
+        right: -10px;
+        position: absolute;
+        width: 25%;
+        height: 105%;
+        background-color: var(--accent);
+        transform: skew(-20deg);
+        transition: 800ms;
+        z-index: 0;
+    }
+
+    .arrow {
+        position: absolute;
+        right: 18px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .btn.sm{
+        padding: 5px 0px;
+        font-size: 15px;
+        width: 180px;
+    }
+
+    .btn.dark {
+        background-color: var(--accent);
+        color: white;
+    }
+
+    .btn.white {
+        border-color: white;
+    }
+
+    .btn.dark .slide-effect{
+        background-color: white;
+    }
+
+    .sm .arrow {
+        height: 15px;
+        width: 15px;
+        right: 15px
+    }
+
+    .sm .slide-effect {
+        right: -5px;
+        width: ;
     }
 
 
     .contenedor:hover .btn{
         box-shadow: 11px 13px 20px 9px rgba(0,0,0,0.1);
-        color: var(--accent);
+        color: white;
     }
 
-    .slide-effect {
-        top: 0;
-        right: -6px;
-        position: absolute;
-        width: 25%;
-        height: 105%;
-        background-color: white;
-        transform: skew(-20deg);
-        transition: 800ms;
-        z-index: 0;
+    .contenedor:hover .btn.dark{
+        box-shadow: 11px 13px 20px 9px rgba(0,0,0,0.1);
+        color: var(--accent);
     }
 
     .contenedor:hover .slide-effect {
         width: 300%;
     }
 
-    .arrow {
-        position: absolute;
-        right: 16px;
-    }
 
-    .btn-lg{
-
-        padding: 2px 30px;
-    }
-
-    .btn-sm {
-
-    }
-
-    a{
-        text-decoration: none;
-    }
 </style>
 
 

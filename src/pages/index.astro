@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AnimatedButton from '../components/AnimatedButton.astro';
 ---
 
 <Layout title="TecFiltrante">
@@ -7,6 +8,11 @@ import Layout from '../layouts/Layout.astro';
 		<img 
 			slot="imagen"
 			src="https://thumb.photo-ac.com/ae/aeebd0d0c7cff537abf01b9d50ac03d9_t.jpeg" />
+		
+		<h1>¡Purifica tu negocio con nosotros!</h1>
+		<h3>Somos especialistas en el aprovechamiento integral del agua para consumo humano en bares, restaurantes, cafeterías, restaurantes de comida rápida, tiendas de autoservicio y residencias.</h3>
+
+        <AnimatedButton text="Cotiza sin costo" goesTo="/contacto" theme="light"/>
 
 </Layout>
 
