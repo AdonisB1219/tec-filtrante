@@ -4,11 +4,8 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 ---
 
 <Layout title="TecFiltrante">
-	<div class="landing">
-
-		<img 
-			slot="imagen"
-			src="https://thumb.photo-ac.com/ae/aeebd0d0c7cff537abf01b9d50ac03d9_t.jpeg" />
+	<main>
+	<section class="landing">
 			
 		<div class="landing-text">
 		
@@ -17,35 +14,32 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 
         <AnimatedButton text="Cotiza sin costo" goesTo="/contacto" theme="light"/>
 	</div>
-	</div>
-	<div style="background-color: 'red'"></div>
+</section>
+	<section style="background-color: red;"></section>
+</main>
 </Layout>
 
 <style>
-	main {
-		background-color: white;
-	}
+
 	img {
 		filter:opacity(30%);
 		height: 100vh;
 		width: 100%;
 		object-fit: cover;
-		position: absolute;
-		top: 0px;
-		z-index: -10;
 	}
 
 	h1{
 		font-weight: 500;
-		margin-top: 100px;
+		margin-top: 150px;
 	}
 
 	h3{
 		text-align: center;
 		margin-bottom: 100px;
 	}
-	.landing {
-		scroll-snap-type: y mandatory;
+	section {
+		height: 100vh;
+		scroll-snap-align: start;
 	}
 
 	.landing-text {
@@ -56,5 +50,15 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 		gap: 50px
 	}
 
+	.landing {
+		background-image: url("/images/water.png");
+	}
+
+	main {
+		scroll-snap-type: y mandatory;
+	}
+
 
 </style>
+
+	
