@@ -37,6 +37,7 @@ const { title } = Astro.props;
 		color: black;
 		font-family: 'Khula', 'sans-serif';
 		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
 	}
 
 	header {
@@ -68,13 +69,30 @@ const { title } = Astro.props;
 	h1 {
 		text-align: center;
 		font-size: 45px;
+		font-weight: 500;
+
+	}
+
+	h2 {
+		font-size: 45px;
+		font-weight: normal;
+		color:var(--accent);
 	}
 
 	h3 {
+		font-size: 45px;
+		font-weight: normal;
+	}
+
+	h4 {
 		font-weight: 400;
 		font-size: 30px;
 		margin: 0;
 		line-height: 1.5;
+	}
+
+	p {
+		font-size: 20px;
 	}
 
 
@@ -97,7 +115,7 @@ figure, blockquote, dl, dd {
   margin-block-end: 0;
 }
 
-ul[role='list'],
+ul,
 ol[role='list'] {
   list-style: none;
 }

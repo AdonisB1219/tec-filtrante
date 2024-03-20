@@ -1,39 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AnimatedButton from '../components/AnimatedButton.astro';
+import Layout from "../layouts/Layout.astro";
+import AnimatedButton from "../components/AnimatedButton.astro";
+import { ImgCarrousel } from "../components/ImgCarrousel.jsx";
 ---
 
 <Layout title="TecFiltrante">
 	<main>
 		<section class="landing">
-			
 			<div class="landing-text">
-		
-			<h1>¡Purifica tu negocio con nosotros!</h1>
-			<h3>Somos especialistas en el aprovechamiento integral del agua para consumo humano en bares, restaurantes, cafeterías, restaurantes de comida rápida, tiendas de autoservicio y residencias.</h3>
+				<h1>¡Purifica tu negocio con nosotros!</h1>
+				<h4>
+					Somos especialistas en el aprovechamiento integral del agua
+					para consumo humano en bares, restaurantes, cafeterías,
+					restaurantes de comida rápida, tiendas de autoservicio y
+					residencias.
+				</h4>
 
-        	<AnimatedButton text="Cotiza sin costo" goesTo="/contacto" theme="light"/>
+				<AnimatedButton
+					text="Cotiza sin costo"
+					goesTo="/contacto"
+					theme="light"
+				/>
 			</div>
 		</section>
-		<section style="background-color: red;"></section>
+
+		<section class="nosotros">
+			<figure class="nosotros-sec">
+				<ImgCarrousel client:load />
+			</figure>
+			<div class="nosotros-sec">
+				<div class="title">
+					<img src="/images/wave.png" alt="" class="wave-img" />
+					<h2>Sobre nosotros</h2>
+				</div>
+				<div class="nosotros-text">
+					<h3>Mas de 20 años cuidando tu salud</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing elit
+						Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
+						sit amet sapien fringilla, mattis ligula consectetur,
+						ultrices mauris. Maecenas vitae mattis tellus..
+					</p>
+					<AnimatedButton
+						text="Conoce más"
+						goesTo="/nosotros"
+						theme="light"
+					/>
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
-
-	img {
-		filter:opacity(30%);
-		height: 100vh;
-		width: 100%;
-		object-fit: cover;
-	}
-
-	h1{
-		font-weight: 500;
+	.landing-text > h1 {
 		margin-top: 150px;
 	}
 
-	h3{
+	h2 {
+		margin: 0 30px;
+	}
+
+	h4 {
 		text-align: center;
 		margin-bottom: 100px;
 	}
@@ -47,7 +75,7 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 		flex-direction: column;
 		justify-items: center;
 		align-items: center;
-		gap: 50px
+		gap: 50px;
 	}
 
 	.landing {
@@ -58,7 +86,29 @@ import AnimatedButton from '../components/AnimatedButton.astro';
 		scroll-snap-type: y mandatory;
 	}
 
+	.nosotros {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		padding: 60px 20px;
+	}
 
+	.nosotros-sec {
+		margin: 40px;
+		flex: 1;
+	}
+
+	.title {
+		display: flex;
+		align-items: start;
+	}
+
+	.nosotros-text > p {
+		margin-bottom: 60px;
+	}
+
+	figure {
+		display: flex;
+		justify-content: center;
+	}
 </style>
-
-	
